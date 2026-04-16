@@ -1,2 +1,2 @@
 # Solum
-Answers
+Please access it from the master branch.
