@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dialysis Mortality Summary</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body data-page="summary">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">CMS Dialysis Facility Data</p>
+        <h1>Mortality Summary Dashboard</h1>
+        <p class="subtitle">Filter by time and location, then compare mortality outcomes across facilities.</p>
+      </div>
+      <nav>
+        <a class="nav-link active" href="/">Summary</a>
+        <a class="nav-link" href="/analysis">Analysis</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="card" id="datasetNote"></section>
+
+      <section class="filters card">
+        <h2>Filters</h2>
+        <div class="filter-grid">
+          <label>Year<select id="year"></select></label>
+          <label>Month<select id="month"></select></label>
+          <label>State<select id="state"></select></label>
+          <label>ZIP Code<input id="zip" placeholder="e.g. 94"></label>
+          <label class="wide">Facility Name<input id="facility" placeholder="Search facility"></label>
+        </div>
+        <div class="button-row">
+          <button id="applyFilters">Apply</button>
+          <button id="resetFilters" class="secondary">Reset</button>
+          <button id="exportCsv" class="secondary">Export CSV</button>
+        </div>
+      </section>
+
+      <section class="stats-grid" id="summaryCards"></section>
+
+      <section class="card">
+        <h2>Top 10 Highest Mortality</h2>
+        <div id="topHighest"></div>
+      </section>
+
+      <section class="card">
+        <h2>Top 10 Lowest Mortality</h2>
+        <div id="topLowest"></div>
+      </section>
+
+      <section class="card">
+        <div class="table-head">
+          <h2>Facility Table</h2>
+          <div class="pagination">
+            <button id="prevPage" class="secondary">Previous</button>
+            <span id="pageLabel"></span>
+            <button id="nextPage" class="secondary">Next</button>
+          </div>
+        </div>
+        <div id="tableContainer"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+  </html>

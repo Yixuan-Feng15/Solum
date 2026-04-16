@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dialysis Mortality Analysis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body data-page="analysis">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">CMS Dialysis Facility Data</p>
+        <h1>Mortality Analysis</h1>
+        <p class="subtitle">Monthly trend, state comparison, ZIP comparison, and mortality distribution.</p>
+      </div>
+      <nav>
+        <a class="nav-link" href="/">Summary</a>
+        <a class="nav-link active" href="/analysis">Analysis</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="card" id="datasetNote"></section>
+
+      <section class="filters card">
+        <h2>Filters</h2>
+        <div class="filter-grid">
+          <label>Year<select id="year"></select></label>
+          <label>Month<select id="month"></select></label>
+          <label>State<select id="state"></select></label>
+          <label>ZIP Code<input id="zip" placeholder="e.g. 77"></label>
+          <label class="wide">Facility Name<input id="facility" placeholder="Search facility"></label>
+        </div>
+        <div class="button-row">
+          <button id="applyFilters">Apply</button>
+          <button id="resetFilters" class="secondary">Reset</button>
+          <button id="exportCsv" class="secondary">Export CSV</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Monthly Trend</h2>
+        <div id="monthlyTrend"></div>
+      </section>
+
+      <section class="card">
+        <h2>Average Mortality by State</h2>
+        <div id="byState"></div>
+      </section>
+
+      <section class="card">
+        <h2>Average Mortality by ZIP</h2>
+        <div id="byZip"></div>
+      </section>
+
+      <section class="card">
+        <h2>Distribution</h2>
+        <div id="distribution"></div>
+      </section>
+
+      <section class="card">
+        <h2>Facility Ranking</h2>
+        <div id="ranking"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+  </html>
